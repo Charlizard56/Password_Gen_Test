@@ -2,7 +2,7 @@ import Gen
 import List_and_tuples
 
 t = False
-times = 1
+times = 6
 
 if __name__ == '__main__':
     # Generate password
