@@ -13,17 +13,17 @@ def gen(times, t):
     _t = t
     # So the string array isn't empty
     List_and_tuples.Password.append(ran())
-    print(f"Starting: {List_and_tuples.Password[0]}")
+    #print(f"Starting: {List_and_tuples.Password[0]}")
 
     while _times > 0:
         n = ran()
         l = List_and_tuples.Password[len(List_and_tuples.Password) - 1]
 
-        print(f"Random: {n} Last: {l}")
+        #print(f"Random: {n} Last: {l}")
 
         #Turn Upper or Lower Letters
         upper = r.randint(0,1)
-        print(upper)
+        #print(upper)
         if upper:
             try:
                 n = n.upper()
