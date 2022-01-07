@@ -1,6 +1,6 @@
 import Gen
 import List_and_tuples
-import itertools
+
 
 t = False
 times = 8
@@ -10,24 +10,31 @@ letters_lower = False
 letters_upper = False
 
 if __name__ == '__main__':
-    # Generate password
-    Gen.gen(times, t)
 
-    print(List_and_tuples.Password)
-    # Compare the password list to the other tuples
-    for p, s, n, l, L in itertools.product(List_and_tuples.Password, List_and_tuples.Symbols, List_and_tuples.Numbers,
-                                        List_and_tuples.letters, List_and_tuples.Letters):
-        # Check if there is at least 1 Symbol
-        if p == s:
-            symbol = True
-        # Check if there is at least 1 Number
-        if p == n:
-            number = True
-        if p == l:
-            letters_lower = True
-        if p == L:
-            letters_upper = True
+    while True:
+        try:
+            Gen.gen(times,t)
+            print(List_and_tuples.Password_Gen)
+            t = Gen.Check(symbol, number, letters_lower, letters_upper)
+            if t:
+                print("All True")
+                # Crate String For Password
+                List_and_tuples.Password = ""
+                for p_g in List_and_tuples.Password_Gen:
+                    List_and_tuples.Password += p_g
+                    print(List_and_tuples.Password)
+                break
+            else:
+                print("Continue")
+                List_and_tuples.Password_Gen = []
+                continue
+
+        except:
+            print("Something went wrong")
+
+        finally:
+            print("Password Generation Success!")
 
 
 
-    print(f'\nSymbol: {symbol} | Number: {number} | Lowercase: {letters_lower}| Upper: {letters_upper}')
+
