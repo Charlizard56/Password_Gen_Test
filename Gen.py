@@ -1,4 +1,4 @@
-import  random as r
+import random as r
 import List_and_tuples
 import itertools
 
